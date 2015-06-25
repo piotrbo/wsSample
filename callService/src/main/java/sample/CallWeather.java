@@ -1,13 +1,9 @@
 package sample;
 
 import com.cdyne.ws.weatherws.*;
-import org.apache.cxf.binding.soap.SoapMessage;
-import org.apache.cxf.interceptor.Fault;
-import org.apache.cxf.interceptor.Interceptor;
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
-import org.apache.cxf.message.Message;
 
 /**
  * Created by piotrbo on 03/06/2015.
@@ -34,7 +30,7 @@ public class CallWeather {
 
 
     private static <T> T getSoapClient(String serviceEndpoint, Class<T> serviceClass) {
-        JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean(); //why not JaxWsClientFactoryBean?
+        JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
         jaxWsProxyFactoryBean.setServiceClass(serviceClass);
         jaxWsProxyFactoryBean.setAddress(serviceEndpoint);
 
